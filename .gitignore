@@ -40,3 +40,7 @@ Thumbs.db
 .actrc*
 
 __pycache__/
+
+# OctoFit tracker artifacts
+octofit-tracker/**/node_modules/
+octofit-tracker/**/dist/
