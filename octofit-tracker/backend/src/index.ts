@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import workoutsRouter from './routes/workouts'
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8000
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/octofit'
@@ -8,6 +9,8 @@ const app = express()
 app.use(express.json())
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }))
+
+app.use('/api/workouts', workoutsRouter)
 
 async function start() {
   try {
